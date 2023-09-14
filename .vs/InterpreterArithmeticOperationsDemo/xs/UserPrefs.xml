@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{2BDFD6D1-96B7-4E06-8112-64215E2A78C0}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReadMe.md">
+    <Files>
+      <File FileName="ArithmeticOperationsInterpreter/Program.cs" Line="4" Column="1" />
+      <File FileName="ArithmeticOperationsInterpreter/Expressions.cs" Line="107" Column="25" />
+      <File FileName="UnitTests/UnitTest1.cs" Line="32" Column="10" />
+      <File FileName="UnitTests/Usings.cs" Line="1" Column="1" />
+      <File FileName="ArithmeticOperationsInterpreter/Interpreter.cs" Line="63" Column="5" />
+      <File FileName="ReadMe.md" Line="4" Column="112" />
+      <File FileName=".editorconfig" Line="235" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="InterpreterArithmeticOperationsDemo" expanded="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="ArithmeticOperationsInterpreter" expanded="True">
+              <Node name="Interpreter.cs" selected="True" />
+            </Node>
+            <Node name="UnitTests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.UnitTests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.InterpreterArithmeticOperations FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+</Properties>
