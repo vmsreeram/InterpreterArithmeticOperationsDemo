@@ -10,6 +10,7 @@
  * Description = Unit tests for the interpreter pattern demo.
  *****************************************************************************/
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using InterpreterArithmeticOperations;
 namespace UnitTests
 {
@@ -86,7 +87,7 @@ namespace UnitTests
         [ExpectedException(typeof(DivideByZeroException))]
         public void TestDivisionByZero()
         {
-            string expression = "324 0 /";
+            string expression = "324 4 4 - /";
             _ = Interpreter.Evaluate(expression);
 
             // If it gets to this line, no exception was thrown.
@@ -99,10 +100,52 @@ namespace UnitTests
         [TestMethod]
         public void TestMultilevelExpression()
         {
-            string expression = "1 124 247 - 1256 2312 / 8237 * + 454 *";
+            string expression = "124 247 - 1256 2312 / 8237 * + 454 *";
             int result = Interpreter.Evaluate(expression);
 
             Assert.AreEqual(-55842, result);
+        }
+
+        /// <summary>
+        /// Tests an expression with invalid operator.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TestInvalidOperatorExpression()
+        {
+            string expression = "124 247 - 1256 2312 / 8237 * ^ 454 *";
+            _ = Interpreter.Evaluate(expression);
+
+            // If it gets to this line, no exception was thrown.
+            Assert.Fail( "Invalid expression did not throw exception." );
+        }
+
+        /// <summary>
+        /// Tests an invlid expression with stack overflow.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TestInvalidExpressionStackOverflow()
+        {
+            string expression = "2 2 3 *";
+            _ = Interpreter.Evaluate(expression);
+
+            // If it gets to this line, no exception was thrown.
+            Assert.Fail( "Invalid expression did not throw exception." );
+        }
+
+        /// <summary>
+        /// Tests another invlid expression with stack underflow.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TestInvalidExpressionStackUnderflow()
+        {
+            string expression = "2 /";
+            _ = Interpreter.Evaluate(expression);
+
+            // If it gets to this line, no exception was thrown.
+            Assert.Fail( "Invalid expression did not throw exception." );
         }
     }
 }
