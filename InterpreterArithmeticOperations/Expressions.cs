@@ -1,5 +1,4 @@
-﻿using System;
-namespace InterpreterArithmeticOperations
+﻿namespace InterpreterArithmeticOperations
 {
     /// <summary>
     /// Abstract base class with an abstract "Interpret()" method for expression interpretation.
@@ -16,7 +15,7 @@ namespace InterpreterArithmeticOperations
     {
         private readonly int _number;
 
-        public NumberExpression( int number )
+        public NumberExpression(int number)
         {
             _number = number;
         }
@@ -35,7 +34,7 @@ namespace InterpreterArithmeticOperations
         private readonly Expression _left;
         private readonly Expression _right;
 
-        public AddExpression( Expression left , Expression right )
+        public AddExpression(Expression left, Expression right)
         {
             _left = left;
             _right = right;
@@ -55,7 +54,7 @@ namespace InterpreterArithmeticOperations
         private readonly Expression _left;
         private readonly Expression _right;
 
-        public SubtractExpression( Expression left , Expression right )
+        public SubtractExpression(Expression left, Expression right)
         {
             _left = left;
             _right = right;
@@ -75,7 +74,7 @@ namespace InterpreterArithmeticOperations
         private readonly Expression _left;
         private readonly Expression _right;
 
-        public MultiplyExpression( Expression left , Expression right )
+        public MultiplyExpression(Expression left, Expression right)
         {
             _left = left;
             _right = right;
@@ -95,7 +94,7 @@ namespace InterpreterArithmeticOperations
         private readonly Expression _left;
         private readonly Expression _right;
 
-        public DivideExpression( Expression left , Expression right )
+        public DivideExpression(Expression left, Expression right)
         {
             _left = left;
             _right = right;
@@ -106,14 +105,9 @@ namespace InterpreterArithmeticOperations
             int interpretedRight = _right.Interpret();
             int interpretedLeft = _left.Interpret();
 
-            if (interpretedRight != 0)
-            {
-                return interpretedLeft / interpretedRight;
-            }
-            else
-            {
-                throw new DivideByZeroException( "Division by zero is not allowed." );
-            }
+            return interpretedRight != 0
+                ? interpretedLeft / interpretedRight
+                : throw new DivideByZeroException("Division by zero is not allowed.");
         }
     }
 }
