@@ -1,5 +1,5 @@
 ﻿/******************************************************************************
- * Filename    = IExpression.cs
+ * Filename    = IExpressionEvaluater.cs
  *
  * Author      = VM Sreeram
  *
@@ -15,7 +15,7 @@ namespace InterpreterArithmeticOperations
     /// <summary>
     /// Exposes an interface for expression interpretation.
     /// </summary>
-    public interface IExpression
+    public interface IExpressionEvaluater
     {
         public int Interpret();
     }

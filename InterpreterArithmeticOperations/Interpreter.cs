@@ -23,7 +23,7 @@ namespace InterpreterArithmeticOperations
         /// <param name="expression">The arithmetic expression to be evaluated.</param>
         public static int Evaluate(string expression)
         {
-            Stack<IExpression> stack = new();
+            Stack<IExpressionEvaluater> stack = new();
 
             string[] tokens = expression.Split(' ');
             foreach (string token in tokens)
@@ -34,13 +34,13 @@ namespace InterpreterArithmeticOperations
                     continue;
                 }
 
-                if(stack.Count<2)               // Because all supported operators are binary operators
+                if (stack.Count < 2)               // Because all supported operators are binary operators
                 {
                     throw new Exception("Invalid input string. Stack underflow.");
                 }
 
-                IExpression right = stack.Pop();
-                IExpression left = stack.Pop();
+                IExpressionEvaluater right = stack.Pop();
+                IExpressionEvaluater left = stack.Pop();
 
                 if (token == "+")
                 {
@@ -64,7 +64,7 @@ namespace InterpreterArithmeticOperations
                 }
             }
 
-            if (stack.Count() != 1)
+            if (stack.Count != 1)
             {
                 throw new Exception("Invalid input string. Stack overflow.");
             }

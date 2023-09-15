@@ -16,7 +16,7 @@ namespace InterpreterArithmeticOperations
     /// <summary>
     /// Terminal expression to interpret and return a stored integer value, which is initialized during construction
     /// </summary>
-    public class NumberExpression : IExpression
+    public class NumberExpression : IExpressionEvaluater
     {
         private readonly int _number;
 
@@ -34,12 +34,12 @@ namespace InterpreterArithmeticOperations
     /// <summary>
     /// Non-terminal expression to interpret and return the result of adding the interpretations of its left and right sub-expressions
     /// </summary>
-    public class AddExpression : IExpression
+    public class AddExpression : IExpressionEvaluater
     {
-        private readonly IExpression _left;
-        private readonly IExpression _right;
+        private readonly IExpressionEvaluater _left;
+        private readonly IExpressionEvaluater _right;
 
-        public AddExpression(IExpression left, IExpression right)
+        public AddExpression(IExpressionEvaluater left, IExpressionEvaluater right)
         {
             _left = left;
             _right = right;
@@ -54,12 +54,12 @@ namespace InterpreterArithmeticOperations
     /// <summary>
     /// Non-terminal expression to interpret and return the result of subtracting the interpretations of its left and right sub-expressions
     /// </summary>
-    public class SubtractExpression : IExpression
+    public class SubtractExpression : IExpressionEvaluater
     {
-        private readonly IExpression _left;
-        private readonly IExpression _right;
+        private readonly IExpressionEvaluater _left;
+        private readonly IExpressionEvaluater _right;
 
-        public SubtractExpression(IExpression left, IExpression right)
+        public SubtractExpression(IExpressionEvaluater left, IExpressionEvaluater right)
         {
             _left = left;
             _right = right;
@@ -74,12 +74,12 @@ namespace InterpreterArithmeticOperations
     /// <summary>
     /// Non-terminal expression to interpret and return the result of multiplying the interpretations of its left and right sub-expressions
     /// </summary>
-    public class MultiplyExpression : IExpression
+    public class MultiplyExpression : IExpressionEvaluater
     {
-        private readonly IExpression _left;
-        private readonly IExpression _right;
+        private readonly IExpressionEvaluater _left;
+        private readonly IExpressionEvaluater _right;
 
-        public MultiplyExpression(IExpression left, IExpression right)
+        public MultiplyExpression(IExpressionEvaluater left, IExpressionEvaluater right)
         {
             _left = left;
             _right = right;
@@ -97,12 +97,12 @@ namespace InterpreterArithmeticOperations
     /// <exception cref="DivideByZeroException">
     /// Raised when division by zero is attemted.
     /// </exception>
-    public class DivideExpression : IExpression
+    public class DivideExpression : IExpressionEvaluater
     {
-        private readonly IExpression _left;
-        private readonly IExpression _right;
+        private readonly IExpressionEvaluater _left;
+        private readonly IExpressionEvaluater _right;
 
-        public DivideExpression(IExpression left, IExpression right)
+        public DivideExpression(IExpressionEvaluater left, IExpressionEvaluater right)
         {
             _left = left;
             _right = right;

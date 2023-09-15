@@ -117,7 +117,7 @@ namespace UnitTests
             _ = Interpreter.Evaluate(expression);
 
             // If it gets to this line, no exception was thrown.
-            Assert.Fail( "Invalid expression did not throw exception." );
+            Assert.Fail("Invalid expression did not throw exception.");
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace UnitTests
             _ = Interpreter.Evaluate(expression);
 
             // If it gets to this line, no exception was thrown.
-            Assert.Fail( "Invalid expression did not throw exception." );
+            Assert.Fail("Invalid expression did not throw exception.");
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace UnitTests
             _ = Interpreter.Evaluate(expression);
 
             // If it gets to this line, no exception was thrown.
-            Assert.Fail( "Invalid expression did not throw exception." );
+            Assert.Fail("Invalid expression did not throw exception.");
         }
     }
 }
