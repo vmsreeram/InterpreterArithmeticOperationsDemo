@@ -147,6 +147,21 @@ namespace UnitTests
             // If it gets to this line, no exception was thrown.
             Assert.Fail("Invalid expression did not throw exception.");
         }
+
+        
+        /// <summary>
+        /// Tests huge integer. Exception needs to be thrown.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TestHugeInteger()
+        {
+            string expression = "1212412412481824618726487126471264 178246817264235325235718264871262421415 +";
+            _ = Interpreter.Evaluate( expression );
+
+            // If it gets to this line, no exception was thrown.
+            Assert.Fail( "Invalid expression did not throw exception." );
+        }
     }
 }
 
