@@ -10,7 +10,7 @@ The interpreter can evaluate simple strings of arithmetic expressions in postfix
 - Invalid inputs strings will be failed gracefully.
 
 ## Design
-![image](./ClassDiagram.jpg)
+![image](./ClassDiagram.png)
 
 ## Environment
 The project builds and runs with Visual Studio Community 2022 when the required workloads are installed.
